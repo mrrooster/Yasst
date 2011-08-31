@@ -1,0 +1,145 @@
+Yasst - A small cross platform twitter client
+(c) 2009-2011 Ian Clark
+
+Preamble
+========
+
+I'd been looking for a small hobby projec for a while as I'd got out of programming at home, and after visiting FOWA and becoming introduced to Twitter I decided a small desktop client might be the way to go, as I didn't like the heavy weight frameworks that were needed to run the current client of choice at the time.
+
+However, a new house, work comitments and a general lack of time mean I don't have the time to work on it as much, so it seems like the time has come to open source it and let anyone who wants to have a play have a play.
+
+The below is a brain dump of some of the design info, hopefully it's enough for you to get started with the code. Any questions email me at: mrrooster@gmail.com
+
+
+
+
+Introduction
+============
+
+Yasst was designed to be a small, lightweight twitter client. I primerally used it as an introduction to the Qt cross platform framework, as such one of the design goals was to ensure reliance only on the Qt libs wherever possible. At the moment this has been acheaved, so if you can build Qt you should be able to compile Yasst okay.
+
+Design
+======
+
+Firstly, this is a hobby project, and was never really intended to be shared with the world on a code level, so the quality of the code is a bit random in places, and documentation is thin on the ground. :)
+
+Overview
+--------
+
+Yasst is split into two parts from a code point of view, there's a clear seperation between the front end display logic and the backend twitter code. This seperation has been fairly well maintained so you should be able to use the backend code in another project without any real issues. Also as the backend is designed with more portability in mind the quality of the code is slightly higher, whereas the frontend code can be a bit spagetified in places.
+
+Also, I was learning Qt as I wrote this so this is probably not a good example of any best practices.
+
+The backend
+-----------
+
+All the backend code is under the 'backend' folder. This should contain everything you need to interact with Twitter. Including all the OAuth stuff needed.
+
+First I should mention HTTPHandler. This is the base class for HTTP communication, the methois called to handle the HTTP communication, it can be passed an arbitary string of data to encode as a POST request. (The method can also be supplied, is derived if not.) There's also a protected set of vectors that can be used to populate a multipart form request. See the TwitrpixImageHandler class for an example of this.
+
+In general you subclass this and reimplement one of the handleHttpResponse methods. This is used heavily.
+
+Birdbox - The tweet container
+-----------------------------
+
+The main class needed for interaction with Twitter is 'BirdBox', this is a container for tweets for a given twitter account. A BirdBox instance can deal with one single twitter account. To support multiple twitter accounts you create multiple BirdBox objects. The birdbox class emits signals whenver tweets arrive from a fetcher....
+
+Fetchers - The tweet collectors
+-------------------------------
+
+A birdbox contains one or more fetchers. These are responsible for fetching things. Initially they just fetched tweets but have been extended to be more generic over time. They can either be single shot fetchers (WebSingleTweetFetcher) or periodic. Single shot fetchers are destroyed after they complete (used to fetch things on demand generally), whereas periodic fetchers are fetched every so often. (The refresh interval is calculated depending on their API usage, if they don't use API it's periodically, if they do it's weighted depending on how much API is left.)
+
+Fetchers are heavly used, as they provide timed, trigger based communication with stuff. Most networky things are implemented as a fetcher, examples are the group handling and the twitrpix upload stuff. have a look in the 'fetchers' folder in the backend.
+
+Fetchers emit tweets...
+
+Tweets - The tweets or other things
+-----------------------------------
+
+A Tweet is emitted by a fetcher, in general this is just a tweet, however this has been extended to cover anything that can be fetched by a fetcher. For example an RSS feed item is a subclass of a tweet with a different type.
+
+The Frontend.
+-------------
+
+The frontend is a tabbed interface. Each tab is a subclass of the TabPanel class.
+
+The main interface is a column based view. This is implemented by the TweetListTabPanel class, each list is a subclass of the TweetListWidget class. In general the TweetListWidget class lists AbstractTweetWidgets. These are subclassed to provide various listable things, for example an RSS entry, or a tweet itself. See the trendingTopicWidget for an example.
+
+Columns can also be subclassed, subclass TweetListWidget to implement custom columns. The Search and trending topics lists are examples of this.
+
+There are 2 other types of tab panels. The first is a debug view (DebugTabPanel), this is activated by creating a blank tab, and setting it's type to decimal 99. (Edit the registry/conf file).
+
+The second was an integrated web browser, this was designed to provide interaction with twitter, eg searching via the twitter website, but adding users directly into yasst. This never really worked too well and the overhead was quite large as you have to compile webkit support into Qt, which doubled the binary size, however the code is still there in WebTabPanel. It's a bit hacky though. 
+
+
+
+
+
+
+Build environment
+=================
+
+Windows - On windows I use the Microsoft Visual C++ compiler, I currently target 32bit systems, using the VC expresss compiler and the Eclipse IDE.
+
+I have sucesfully built using the MinGW compiler suite, however as I used the sound facilities offered by Qt I initially needed the VC compiler suit, which seems to produce smaller binaries than the GCC option. I beleive the MinGW suite now comes with the necessasary header files to allow DirectX support to be compiled. (Which is required for phonon support.)
+
+Linux - For both the 32 and 64 bit linux builds I use debian, with the supplied GCC version.
+
+OSX - I use XCode from Apple.
+
+Qt
+--
+
+On each platform I build Qt from source, this is mainly for historic reasons but does allow customisations as required.
+
+Qt Windows
+---------- 
+
+I build using the following config options, using the Microsoft Visual C compiler. (VCC express from the command line):
+
+configure -phonon -openssl -no-plugin-manifests -I c:\openssl\1.0.0\include -L c:\openssl\1.0.0\lib -I c:\qt\mysql-connector-c-noinstall-6.0.2-win32\include -L c:\qt\mysql-connector-c-noinstall-6.0.2-win32\lib -l libmysql -nomake demos -nomake examples -plugin-sql-mysql -no-qt3support 
+
+You'll need the Open SSL libs installed.
+
+You can probably omit the mysql stuff too, this isn't needed for Yasst.
+
+Qt Linux
+--------
+
+I build Qt under both 64 bit and 32 bit linux.
+
+./configure -phonon -openssl -I /usr/include/gstreamer-0.10/ -I /usr/include/glib-2.0/ -I /usr/lib/glib-2.0/include/ -I /usr/include/libxml2/ -gtkstyle -nomake demos -nomake examples -no-qt3support
+
+Qt OSX
+------
+
+To avoid huge downloads I build both a universal and an intel only build of Qt on OSX.
+
+Universal build:
+
+./configure -universal -prefix /usr/local/Trolltech/Qt-4.7.0-universal -nomake demos -nomake examples -no-qt3support
+
+Intel only build:
+
+./configure -cocoa -prefix /usr/local/Trolltech/Qt-4.7.0-intel -nomake demos -nomake examples -no-qt3support 
+
+Packaging
+=========
+
+NB: Currently these scripts need updating for git. They will not work as supplied.
+
+Windows
+-------
+
+On windows I use the nullsoft install system, the MSI is included in the installer subdirectory. If you rebuild Qt with a newer version then you'll need to pop the release DLLs in the installfiles folder too. The OpenSSL libs should go here too, as does the VC runtime.
+
+Linux
+-----
+
+On linux there's a build-yast-linux.sh script in the installer folder. Examine this to see how the linux build works.
+
+OSX
+---
+
+For OSX there's a build-latest-for-deploy.sh, this builds both the universal and intel only packages.
+
