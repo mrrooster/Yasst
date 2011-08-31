@@ -46,7 +46,7 @@ cp src/*.txt .
 cp -R src/installer/installfiles/examples .
 rm -rf src
 #wget http://www.gnu.org/licenses/gpl-2.0.txt
-wget -O Qt_licence.txt http://www.gnu.org/licenses/lgpl-2.1.txt
+wget -O Qt_licence.txt http://www.gnu.org/licenses/gpl.txt
 cp $QTDIR/lib/libphonon.so.4 $QTDIR/lib/libQtGui.so.4 $QTDIR/lib/libQtXml.so.4 $QTDIR/lib/libQtNetwork.so.4 $QTDIR/lib/libQtCore.so.4 .
 cd plugins
 cp -r $QTDIR/plugins/imageformats .

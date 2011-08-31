@@ -25,7 +25,7 @@ cd yasst-$buildid
 cp src/Changes.txt .
 cp src/ReadMe.txt .
 cp -R src/installer/installfiles/examples .
-ftp -o Qt_licence.txt http://www.gnu.org/licenses/lgpl-2.1.txt
+ftp -o Qt_licence.txt http://www.gnu.org/licenses/gpl.txt
 rm -rf src
 macdeployqt Yasst.app
 cd ..
@@ -52,7 +52,7 @@ cd yasst-$buildid
 cp src/Changes.txt .
 cp src/ReadMe.txt .
 cp -R src/installer/installfiles/examples .
-ftp -o Qt_licence.txt http://www.gnu.org/licenses/lgpl-2.1.txt
+ftp -o Qt_licence.txt http://www.gnu.org/licenses/gpl.txt
 rm -rf src
 macdeployqt Yasst.app
 cd ..
