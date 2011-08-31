@@ -1,0 +1,310 @@
+QPushButton {
+	background-color: none;
+	color: white;
+	border-style: none;
+	border-width: 1px;
+	border-color: rgb(71, 71, 91);
+	padding: 3px;
+}
+
+QPushButton[active="true"] {
+	font-weight: bold;
+	color: rgb(250, 255, 198);
+}
+
+QPushButton:flat {
+	background-color: none;
+	padding: 1px;
+}
+
+QPushButton:hover {
+	background-color: rgb(91, 91, 111);
+}
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:0, y2:0.5, stop:0 rgba(121, 182, 108, 255), stop:0.357955 rgba(118, 209, 146, 255));
+	color: black;
+}
+
+QLineEdit {
+     border: 2px solid gray;
+     border-radius: 2px;
+     padding: 0 3px;
+	background: white;
+}
+
+QLineEdit:focus {
+     background: rgb(255, 255, 235);
+     selection-background-color: darkgray;
+}
+
+QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+	text-align: center;
+	font-weight: bold;
+ }
+
+QProgressBar::chunk {
+     background-color: rgb(149, 177, 163);
+     width: 5px;
+ }
+
+QPlainTextEdit {
+background-color:qradialgradient(spread:pad, cx:0.795, cy:0.818409, radius:1.413, fx:0.193273, fy:0.222, stop:0.0454545 rgba(124, 124, 124, 255), stop:1 rgba(55, 55, 55, 255));
+
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: rgb(71, 71, 71);
+padding: 1px;
+}
+
+QPlainTextEdit:focus {
+background-color:qconicalgradient(cx:0, cy:0, angle:90, stop:0 rgba(140, 212, 181, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPlainTextEdit:focus[tweet="direct"] {
+ background-color: qconicalgradient(cx:0, cy:0, angle:90, stop:0 rgba(92, 135, 238, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QTabWidget::pane , QTabWidget::pane QFrame, QTabWidget::tab-bar, QTabWidget::tab-bar QFrame{ /* The tab widget frame */
+ 	border: none;
+ }
+
+ QTabWidget::tab-bar {
+ 	left: 3px;
+}
+
+QTabWidget {
+	 color: black;
+	 border:none;
+}
+
+QDialog QTabWidget::pane {
+	border-top: 1px solid black;
+}
+
+QTabBar::tab {
+ 	background-color: #343454;
+ 	color: white;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	padding: 2px;
+	margin-top: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+ }
+
+QTabBar::tab:hover {
+ 	border-top: 2px solid orange;
+}
+
+QTabBar::tab:selected {
+	background-color: rgba(70,70,90, 255);
+}
+
+
+  QScrollBar:vertical {
+      border: none;
+  
+     background-color: #272747;
+      width: 13px;
+      margin: 0;
+  }
+
+  QScrollBar::handle:vertical {
+      background-color: #474767;
+      min-height: 20px;
+        border: 1px solid #333353;}
+  QScrollBar::handle:vertical:hover {
+	background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:0, y2:0.5, stop:0 rgba(182, 182, 202, 255), stop:0.8 rgba(239, 239, 255, 255));
+      min-height: 20px;
+      border: 1px solid #333333;
+  }
+  QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+      background: none;
+  }
+  
+  QScrollBar:horizontal {
+      border: none;
+ 	background-color: #272747;
+      height: 13px;
+      margin: 0;
+  }
+  QScrollBar::handle:horizontal {
+      background: #474747;
+      min-width: 20px;
+       border: 1px solid #333333;
+  }
+  QScrollBar::handle:horizontal:hover {
+	background-color: qlineargradient(spread:reflect, x1:1, y1:0, x2:0.5, y2:0, stop:0 rgba(182, 182, 182, 255), stop:0.8 rgba(239, 239, 239, 255));
+      min-width: 20px;
+      border: 1px solid #333333;
+  }
+  
+  QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+      background: none;
+  }
+    
+  QScrollBar::add-line:vertical {
+      border: none;
+      height: 0px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:vertical {
+      border: none;
+      background: #32CC99;
+      height: 0px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+  }
+  QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+  }
+
+  QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+  }
+  
+  QScrollBar::add-line:horizontal ,QScrollBar::sub-line:horizontal {
+  	width: 0px;
+ }
+
+QMainWindow , QWidget#notification, QWidget#tweetlisttabpanel , QDialog, #tabpanel {
+	background-color: #161646;
+}
+
+QLabel , QStatusBar::item *, QStatusBar *, QCheckBox , QDialog, QGroupBox::title {
+	color: rgb(250, 255, 198);
+}
+
+QToolButton {
+	color: white;
+}
+
+QMainWindow::separator {
+    background: none;
+    width: 0px; /* when vertical */
+    height: 0px; /* when horizontal */
+}
+
+QToolBar {
+	border-top: none;
+	border-bottom: none;
+	border-color: rgba(31, 55, 84, 255);
+	border:none;
+	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.403136, stop:0 rgba(28,28,48, 255), stop:1 rgba(80,80,100, 255));
+}
+
+QListWidget {
+color: white;
+background-color: rgb(33,33,53);
+alternate-background-color: rgb(44,44,64);
+show-decoration-selected: 1;
+selection-color: rgb(250, 255, 198);
+selection-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.403136, stop:0 rgba(84, 40, 31, 255), stop:1 rgba(210, 116, 34, 255));
+}
+
+QWidget#tweetlisttabpanel {
+}
+
+QDockWidget {
+	background-color: #262626;
+	color: rgb(250, 255, 198);
+	border: none;
+}
+
+QDockWidget::title {
+	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.403136, stop:0 rgba(28,28,48, 255), stop:1 rgba(80,80,100, 255));
+	color: rgb(250, 255, 198);
+	padding-left: 3px;
+}
+
+#tweetlistwidget , #stack, #TweetListWidgetClass {
+	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.403136, stop:0 rgba(11,11,51, 255), stop:1 rgba(70,70,100, 255));
+	color: yellow;
+}
+
+#tweetlistwidget QLabel#search {
+color: rgb(88,188,142);
+}
+
+#stack QLabel {
+	color: rgb(250, 255, 198);
+}
+ 
+QWidget#logonwidget {
+	background-color: #f0fdff;
+}
+
+#logonwidget QTextBrowser {
+border: none;
+}
+
+#logonwidget QFrame, #logonwidget QCheckBox {background-color:rgb(201, 226, 255); color:black;}
+
+#logonwidget QFrame { padding: 0;}
+
+QWidget#TweetWidget, #scrollareawidget {
+	background-color: #171717;
+}
+
+#TweetWidget[tweet="new"] {
+	background-color: #484545;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+}
+
+#TweetWidget QLabel[tweet="normal"] { 
+background-color:rgba(80, 80, 80, 255);
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 5px;
+	border-color: rgb(71, 71, 71);
+	padding: 0px;
+	color: black;
+	color: rgb(250, 255, 198);
+}
+
+.link {
+	color: red;
+}
+
+#TweetWidget QLabel[tweet="direct"]{
+	background-color: qconicalgradient(cx:0, cy:0, angle:90, stop:0 rgba(92, 135, 238, 255), stop:1 rgba(255, 255, 255, 255));
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 5px;
+	border-color: rgb(71, 71, 71);
+	padding: 0px;
+	color: black;
+}
+
+#TweetWidget QLabel[tweet="reverse_reply"]{
+	background-color: qconicalgradient(cx:0, cy:0, angle:90, stop:0 rgba(152, 105, 238, 255), stop:1 rgba(255, 255, 255, 255));
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 5px;
+	border-color: rgb(71, 71, 71);
+	padding: 0px;
+	color: black;
+}
+
+QLabel#info {
+	padding: 0 3px;
+	font-weight: normal;
+	background-color: rgb(84,84,84);
+	color: white;
+	border-radius: 2px;
+}
+
+QLabel#date {
+	padding: 0 3px;
+	font-weight: normal;
+	background-color: rgb(44,44,44);
+	color: grey;
+	border-radius: 2px;
+}
+

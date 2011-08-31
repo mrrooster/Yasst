@@ -1,0 +1,423 @@
+Changes $Id: Changes.txt,v 1.63 2010/10/05 18:08:51 ian Exp $
+
+Known Issues
+============
+
+* Proxy authentication is not well tested.
+
+20101005
+--------
+
+* Added: Tweet command line options, '-tweet' and '-tweetas', use: yasst -tweet "some message" -tweetas someuser, the user must be setup in yasst.
+* Added: Mark all as read button, as the 'double click on count' behaviour wasn't obvious.
+* Added: Style directive to allow styling of mentions
+* Added: Slider to control importance of single user tweets (when viewing a users profile.)
+* Changed: Moved shorten button.
+* Changed: Sliders are slightly more agressive for tweet importance.
+* Changed: New feeds open a URL request dialog.
+* Changed: New style retweet button.
+* Changed: Updated auto complete behaviour to auto hide on an exact match, or when no items are available. [Thanks @arvislacis]
+* Changed: New columns are added as the first column, rather than the last. 
+* Fixed: Retweeting RSS feed items should work now.
+* Fixed: URL redirects are now followed.
+* Upgraded: Upgraded to Qt 4.7
+
+20100802
+--------
+
+* Added: Per column refresh [Thanks @arvislacis] 
+* Added: Popup notifications [Thanks @HufflepuffBR]
+* Added: Short URLs, turn on in options, hover over URLs to see the long version. [Thanks @arvislacis]
+* Changed: Removed left and right buttons.
+* Fixed: The dates in the places I forgot to localise. :) [Thanks @arvislacis] 
+
+20100720
+--------
+
+* Added: Very basic user theme support.
+* Added: Default 'new tweets' sound [Thanks @arvislacis]
+* Added: Slider to control min refresh in seconds.
+* Changed: Dates are now shown according to OS locale settings.
+* Changed: Behaviour of options when no accounts to make it more obvious.
+* Fixed: Showing tweet dates when users local is not English. [Thanks @arvislacis for patience and help tracking this down.]
+* Fixed: Making noises on new tweets seems to have been broken for a while.
+* Fixed: API rate checking.
+* Fixed: List handling had been broken since OAuth.
+* Fixed: List management window quirks
+
+20100713
+--------
+
+* Added: Google translate, you can translate incoming tweets (right click on the avatar). Also you can translate your own tweets (enable this in the options).
+* Added: Settings reseting.
+* Changed: Group/list button now always opens a menu, list management is now a menu option. To make group creation more obvious.
+* Changed: Network things, trying to narrow down the issues of nonresponsivness.
+* Fixed: Closing all tabs then quitting would crash.
+* Fixed: [OSX] Toolbar obscuring main window when only 1 tab open.
+* Fixed: Picture uploading.
+* Fixed: Column dragging isn't so flickery
+
+20100624
+--------
+
+* Changed: Column repopulation, should stop the odd clear-refresh you get on twitter lists sometimes.
+* Fixed: Refreshing tweets had become sporadic
+
+20100619
+--------
+
+* Added: OAuth authentication.
+* Fixed: Resending tweets now have correct icon.
+* Fixed: SSL is now used correctly. 
+
+20100427
+--------
+
+* Fixed: Autocomplete popup positioning.
+
+20100426
+--------
+
+* Added: Auto complete for user names and known hash tags.
+* Added: Pressing escape will cancel the tweet.
+* Added: Menu on prune read tweets button, you can now remove from this column only or all columns (previous behaviour.)
+* Added: Double clicking on the tweet text (avoiding links) will mark the tweet as read.
+* Added: Configuration option for automatic mark as read, time delay before marking can be set too.
+* Fixed: Possible weird tweet deleting after prune read tweets
+
+20100420
+--------
+
+* Added: Remove read tweets button on columns, click to remove tweets that are marked read in that column. Tweets are removed from all lists. [Thanks imymulla for suggesting this.]
+* Changed: Layout changes on userinfo panel, less wide.
+* Fixed: Changing group members refreshes column correctly.
+* Fixed: Obscure possible crash when tweets have been removed from columns.
+
+20100419
+--------
+
+* Updated: The user info panel now shows followers/friends count and user URL.
+* Fixed: The Skip logon button now works as advertised, and also opens a feed list to edit. [Thanks imymulla]
+
+20100330
+--------
+
+* Changed: Tidied up OSX and linux a bit. (just a bit mind).
+* Added: Version and OS to URL launched on upgrade, so I can see if people actually upgrade or not. :)
+
+20100321
+--------
+
+* Added: Dragging columns to reorder.
+* Changed: Icons and window layout.
+* Changed: Removed 'default' theme, added a horrible blue thingy.
+* Changed: Column refresh semantics.
+* Changed: Searches refresh every 2 minutes now, rather than every minute.
+* Fixed: Marking of tweets as new.
+
+20100317
+--------
+
+* Added: You can now add users to a list by name in the list management window.
+* Added: Skip logon button on main login window, allows use as an RSS reader.
+* Added: Retweets now show orig user avatar, rather than a little arrow.
+* Added: Font size on tweets is now configurable in the options.
+* Added: You can now view lists you follow. (Still no follow/unfollow on lists though). 
+* Fixed: duplicate lists showing in menus.
+* Fixed: Lists with non followed people now fetch correctly, uses API count.
+* Fixed: Removing all accounts causes a crash.
+* Fixed: Twitrpix posting.
+
+20100124
+--------
+
+* Added: Multiple account support.
+
+20100112
+--------
+
+* Fixed: Tweet expiration. Old tweets weren't being deleted correctly, leading to slowdown once the app had been open a while. This should improve long  term memory usage, and prevent the gradual slowdowns seen.
+* Fixed: Slightly imrpoved image handling when URL redirected. (Was causing a crash on linux.)
+* Fixed: User info window should update all the time now, but still need a 'this user is private' message
+* Fixed: JSON Parser, so trending topics now work
+* Fixed: Tray icon
+
+20091223
+--------
+
+* Fixed: Getting user info using the little 'i'.
+
+20091222
+--------
+
+* Fixed: clicking cancel when editing groups could sometimes close the group unexpectedly.
+
+20091221
+--------
+
+* Added variable width columns
+* Added new style retweet, with the option to edit the tweet (ala old style retweeting)
+* Added displaying of new style retweets from orig user (set in options.)
+* Added support for twitter lists
+* Sped up closing of full columns
+* Fixed: Malformed URLs [Thanks moomin_dc]
+* Fixed: Refreshing users tweets only happens once now. [Thanks wilko1]
+* Fixed: Made the 'do not remember password' checkbox state persistant [Thanks wilko1]
+* Changed: Redraw behaviour, should be quicker now.
+
+20091005
+--------
+
+* Added drag and drop into image box.
+* Fixed occasional crash clicking 'refresh' on a user
+* Fixed friend fetching, now populates list of friends
+
+20091002
+--------
+
+* Fixed crash with error response from twitter in certain situations.
+
+20090927
+--------
+
+* Fixed accidental repopulating of trending topics
+* Fixed incorrect tooltip on compact view
+* Added context menu to avatar on compact view.
+* Changed trending topics fetcher to fetch quicker on initial error
+
+20090926
+--------
+
+* Added popout mode, click eject on a column to pop out a compact version, close the popout to return to normal. [Suggested by wilko1]
+* Changed error reporting for trending topics.
+
+20090923
+--------
+
+* Fixed trending topics only allowing current to be fetched
+* Clamped the number of tweets in trending topics widget to 150
+* Added 'Clear' button to trending topics
+
+20090921
+--------
+
+* Added trending topics
+* Added JSON parser for search and trending topics
+* Fixed searches
+* Reduced text size for column headings
+* Bugfixes
+
+20090913
+--------
+
+* Added context menu to user icon in tweets, useful for quickly adding a user to a group.
+* Fixed update of user list, so items won't unselect, and the scrollbar won't jump as new users are fetched.
+* Fixed link highlighting with cr and nl chars, more links in tweets should work now.
+* Fixed tweets not appearing in 'Friends' column correctly.
+* Fixed unfollow/follow button not showing occasionally.
+* URL shortening will auto retry upon failure.
+* Slightly changed error notification timing.
+
+20090906
+--------
+
+* Added web feed support
+* Added icons for columns
+* Added tweet resending on failure.
+* Added error notification.
+* Changed user info fetching, should now slowly fetch info for all friends
+* Changed url shortening to use shorter bit.ly url of j.mp
+* Fixed crash when auth fails
+* Fixed occasional crash saving group widget [thanks moomin_dc]
+
+20090902
+--------
+
+* Changed search, removed name, made the search part of the list view
+* Remove web based user search as it never really worked well, let me know if you miss it. :)
+* Added user info column, type a users screen name to see their tweets, opened by the old user search icon
+* Double click on the user info column title to change the user
+* Changed tab buttons to not be so... flaky.
+
+20090825
+--------
+
+* Added unread tweet count tooltip
+* Added double click to clear unread tweets.
+* Fixed pressing return oddity, fixed return on keypad not working.
+* Fixed initial theme disparity.
+
+20090824
+--------
+
+* Configurable initial fetch size, defaults to 50 for a quicker startup, set it to 200 to get the old behaviour.
+* Added user info column, you can now view a users profile and last few tweets (including mentions you normally wouldn't see) in a handy column.
+* Added user refresh, you can fetch the last 50 tweets for a user, which includes any mentions you normally wouldn't see
+* Update check. Yasst will check for a new version periodically, can be disabled in the options
+* Changed the new tweet handling sligtly
+* Slight memory usage improvements
+* URL shortening fixed
+* Some small bugs fixed
+
+
+20090726
+--------
+
+* Added new tweets indicator. [Suggested by navbassi]
+* Added system tray icon. [Suggested by wtfmf]
+* Added favorite support. Can view the last 20 favourite tweets, can mark tweets as favorite. [Suggested by wtfmf]
+* Added bit.ly API key support, url's now appear in users bit.ly history.
+* Fixed annoying random noise bug. [Thanks wilko1 for help finding this.]
+* Changed date parsing, hopefully will fix the 'no dates' bug being seen by some people [Thanks c_ern]
+
+20090719
+--------
+
+* Doesn't hide the search for people pane whilst logging into twitter so you can see it's not worked.
+* Themes.
+
+20090703
+--------
+
+* Upped initial search results to 100.
+* Fixed a huge memory leak. :)
+
+20090621
+--------
+
+* Added friend finding, integrated the twitter user search into Yasst.
+* Bugfixes and speedups.
+
+20090615
+--------
+
+* Added global filtering (set in options)
+* Slightly changed network code for better proxy and failure support
+* Shamefull #twitpocalypse bug fixed.
+ 
+20090607
+--------
+* Added image upload via twitrpix.com
+* Made delay before send variable.
+* Some bugs fixed
+* Small layout changes
+* Fixed handling of incorrect username/password (if you don't check 'remember me')
+* Changed timing of image expiry
+
+20090517
+--------
+
+* Added mute to columns
+* Fixed searches making notification sound every refresh
+* Fixed saving of filter for DMs and mentions
+
+20090514
+--------
+
+* #fixreplies support. You can disable setting of the 'in_reply_to' flag when tweeting.
+* Group members now show all the time, less chance of lossing group members accidentally when changing.
+* Added icons to group lists members
+* Changed ordering of members when setting up group lists to be case insensative
+* Tweet timestamps should be accurate now
+* Lists now should stay scrolled to the current tweet as new tweets are added, so you can see which lists have new tweets (Optional)
+* Made group lists refresh users as they're known about.
+* Some race conditions fixed hopefully.
+
+20090420
+--------
+
+* Fixed handling of &,< and > in messages.
+* Added a close tab icon and a proper menu for the mac.
+
+20090419
+--------
+
+* Added tabs, double click on the tab to rename it.
+* Added last 10 groups and last 10 searches, close a group or search, then click and hold either the new group
+  new search icon and you'll get a list of the groups/searches you've closed.
+* Added 'follow' button to tweets from non friends (ie searches)
+* Added dock size and position saving to options
+* Stopped lists expanding, always minimum width
+* Changed status bar to more accuratly reflect fetches in progress.
+* Tweets now expire if more than 20 minutes old and not displayed.
+* Tweet lists now expire tweets older than n minutes, when there are more than x items in the list.
+* Images now expire when not used frequently, or over 2 hours old. (To prevent avatar changes being missed.)
+* Having lots of friends won't blow your API limit, a max of 1000 friends are currently fetched.
+* Updated options window, added twitter user/pass to options window.
+* Added test to annoying noise.
+* Added configurable weighting for fetchers, so you can fetch tweets more frequently than DMs say.
+* Added configurable expire times and tweet count for tweet lists in options window.
+
+20090413
+--------
+
+* Added delete tweet/direct messages option.
+* Made filters persist across invocations.
+
+20090403xxxx
+------------
+
+* Changed 'replies' to 'mentions' inline with twitter change, replying to a second
+  user adds that username to the existing reply tweet.
+* Fixed the noises on new tweets, doesn't sound more often than once every 30 seconds.
+
+20090327xxxx
+------------
+
+* Fixed problem with shortening certain URLs
+* Added some nice new icons, and made it look.. well... different.
+* Fixed bug with some friends not showing up.
+* Fixed oddities (hopefully) between search users and normal users
+* Made searches refresh seperatly from tweets
+* Made tweet fetching more robust, and displayed next refresh time more accurate
+* Fixed occasional profile info not showing up
+* Fixed searching with multiple terms. 
+* Added receving direct messages.
+* Added sending direct messages.
+* # links in tweets open new searches
+* General layout tweaks
+
+20090317xxxx
+------------
+
+* Fixed broken 'in reply to' links
+
+20090316xxxx
+------------
+* Added 'posted from Yasst' bit, and displaying of posted from info.
+* Changed repopulation for group lists
+* Added 'My friends' column
+* Retitled 'All' to be correct.
+* Group list widgets only show friends, not every user I know about.
+
+20090315xxxx
+------------
+* Lots of changes, searching and filtering being the big ones.
+
+2009022301xx
+------------
+
+* Added status bar
+* Added date to tweets
+* Added 'refresh' option
+* Removed paddingo on lists, and padding between lists
+* Added crappy 'reply'', 'retweet'  and 'close' icons
+* Fixed bug where delayed send would fail if no tweets from authenticating user were fetched
+* Added syntax highlighting of URLs (for future URL shortening) and first 140 chars of tweets that are too long
+
+2009021901xx
+------------
+
+* Initial proxy support, doesn't work for HTTP proxies when fetching the images yet, 
+  although SOCKS seems OK. I'll get round to fixing this next release probably.
+* Added clicking on '@names' in messages, launches twitter profile pages.
+* Double clicking on a profile image now opens the twitter profile page
+* URLs ending in . (ie, the end of a sentance) should parse ok now.
+* Reply when already replying changes to the new 'reply' target.
+* Retweeting when replying cancells reply
+* Replying/retweeting with the tweet window closed automatically opens the tweet window
+* Columns can be moved left and right
+* Dates on messages
+* Message text now selectable
+* Smoother addition of new columns, tweets now populate 'slowly'
+ 

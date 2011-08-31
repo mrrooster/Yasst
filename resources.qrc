@@ -1,0 +1,65 @@
+<RCC>
+    <qresource prefix="/appicon">
+        <file alias="yasst.png">media/crappyicon.png</file>
+    </qresource>
+    <qresource prefix="/buttons">
+        <file alias="unmuted.png">media/audio-volume-high.png</file>
+        <file alias="muted.png">media/audio-volume-muted.png</file>
+        <file alias="follow.png">media/media-playback-start.png</file>
+        <file alias="closetab.png">media/tab-close.png</file>
+        <file>media/tab-new.png</file>
+        <file alias="tweet.png">media/tango-icon-theme/internet-group-chat.png</file>
+        <file alias="direct_message.png">media/tango-icon-theme/internet-mail.png</file>
+        <file alias="refresh-overlay.png">media/tango-icon-theme/view-refresh.png</file>
+        <file alias="fav-off.png">media/fav-off.png</file>
+        <file alias="fav-on.png">media/fav-on.png</file>
+        <file alias="info.png">media/info.png</file>
+        <file alias="reply.png">media/gray/button_reply.png</file>
+        <file alias="favorite.png">media/gray/emblem-favorite.png</file>
+        <file alias="feed.png">media/gray/feed-icon-32x32.png</file>
+        <file alias="group.png">media/gray/group.png</file>
+        <file alias="twitter.png">media/gray/icon_twitter.png</file>
+        <file alias="twitter-dark.png">media/gray/icon_twitter_dark.png</file>
+        <file>media/gray/internet-group-chat.png</file>
+        <file>media/gray/internet-mail.png</file>
+        <file alias="all_tweets.png">media/gray/internet-web-browser.png</file>
+        <file alias="options.png">media/gray/preferences-system.png</file>
+        <file alias="user_search.png">media/gray/search-users.png</file>
+        <file alias="search.png">media/gray/system-search.png</file>
+        <file alias="friends.png">media/gray/system-users.png</file>
+        <file alias="newtab.png">media/gray/tab-new.png</file>
+        <file alias="trendingtopics.png">media/gray/trendingtopics.png</file>
+        <file alias="delete.png">media/gray/user-trash.png</file>
+        <file alias="refresh.png">media/gray/view-refresh.png</file>
+        <file>media/gray/go-jump.png</file>
+        <file alias="right.png">media/gray/go-next.png</file>
+        <file alias="left.png">media/gray/go-previous.png</file>
+        <file alias="close.png">media/gray/button_close.png</file>
+        <file alias="prune.png">media/gray/edit-cut.png</file>
+        <file alias="markasread.png">media/clean-grey.png</file>
+        <file alias="retweet.png">media/gray/retweet2.png</file>
+        <file alias="unfollow.png">media/media-eject.png</file>
+    </qresource>
+    <qresource prefix="/misc">
+        <file>media/missingavatar.png</file>
+    </qresource>
+    <qresource prefix="/style">
+        <file alias="main.css">Stylesheet.css</file>
+        <file alias="main-text.css">Style-text.css</file>
+        <file alias="dark.css">Style-dark.css</file>
+        <file alias="dark-text.css">Style-dark-text.css</file>
+        <file alias="purple.css">Style-purple.css</file>
+        <file alias="purple-text.css">Style-purple-text.css</file>
+        <file alias="x11.css">Style-linux.css</file>
+        <file alias="osx.css">Style-osx.css</file>
+    </qresource>
+    <qresource prefix="/trendstates">
+        <file alias="down.png">media/down.png</file>
+        <file alias="newentry.png">media/newentry.png</file>
+        <file alias="stick.png">media/stick.png</file>
+        <file alias="up.png">media/up.png</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file alias="new_tweets.mp3">media/canary.mp3</file>
+    </qresource>
+</RCC>

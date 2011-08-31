@@ -1,0 +1,14 @@
+debug
+release
+object_script.Yasst.Debug
+object_script.Yasst.Release
+Makefile.Release
+Makefile.Debug
+Makefile
+ui_logonwidget.h
+ui_TweetPanel.h
+ui_tweetwidget.h
+ui_tweetlistwidget.h
+*.pdb
+ui_*.h
+yasst.aps

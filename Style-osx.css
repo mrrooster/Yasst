@@ -1,0 +1,24 @@
+#stack QPushButton {
+	icon-size: 16px 16px;
+}
+
+QLabel#info {
+	font-size: 10pt;
+}
+
+QLabel#date {
+    font-size: 10pt;
+}
+
+QLabel[objectName='count'] {
+    font-size: 12pt;
+}	
+
+QLabel[objectName='title'] {
+    font-size: 13pt;
+}	
+
+QTabWidget::tab-bar > QFrame {
+	padding-top: 5px;
+}
+

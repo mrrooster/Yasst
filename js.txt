@@ -1,0 +1,57 @@
+$Id: js.txt,v 1.3 2009/06/21 23:12:59 ian Exp $
+
+Javascript in 'easy to read' format. ;)
+
+----------------------------------- Search page
+function $(s){return document.getElementById(s);}
+function __yasstlinks() {
+var i=['home_link','profile_link','settings_link','help_link','sign_out_link'];
+for (var b in i) {
+b=$(i[b]);
+b.style.display='none';
+}
+i=$('footer').firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling;
+while(
+i.nextSibling){i.parentNode.removeChild(i.nextSibling);
+}
+}
+__yasstlinks();
+------------------------------------ Search results page
+function $(s){return document.getElementById(s);}
+function __yasst() {
+	i=$('timeline');
+	i.innerHTML='<style>.follow-actions input{display:none;} a.__yasst-followsingle {text-decoration:none; visibility:visible !important; -webkit-appearance: none; -webkit-border-bottom-left-radius: 5px; -webkit-border-bottom-right-radius: 5px; -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -webkit-box-align: center; -webkit-box-sizing: border-box; -webkit-rtl-ordering: logical; -webkit-user-select: text; background-color: rgb(230, 230, 230); border-bottom-color: rgb(204, 204, 204); border-bottom-style: solid; border-bottom-width: 1px; border-left-color: rgb(204, 204, 204); border-left-style: solid; border-left-width: 1px; border-right-color: rgb(204, 204, 204); border-right-style: solid; border-right-width: 1px; border-top-color: rgb(204, 204, 204); border-top-style: solid; border-top-width: 1px; color: black; cursor: pointer; display: inline-block; font-family: \\'Lucida Grande\\'; font-size: 10px; font-style: normal; font-variant: normal; font-weight: normal; height: 23px; letter-spacing: normal; line-height: normal; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 4px; padding-left: 8px; padding-right: 8px; padding-top: 4px; text-align: center; text-indent: 0px; text-shadow: none; text-transform: none; vertical-align: top; white-space: pre; width: 48px; word-spacing: 0px;} a:hover.__yasst-follow,a:hover.__yasst-followsingle{background-color: rgb(204, 204, 204);} a.__yasst-follow{visibility: visible !important; -webkit-appearance: none; -webkit-border-bottom-left-radius: 5px; -webkit-border-bottom-right-radius: 5px; -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -webkit-box-align: center; -webkit-box-sizing: border-box; -webkit-rtl-ordering: logical; -webkit-user-select: text; background-color: rgb(230, 230, 230); border-bottom-color: rgb(204, 204, 204); border-bottom-style: solid; border-bottom-width: 1px; border-left-color: rgb(204, 204, 204); border-left-style: solid; border-left-width: 1px; border-right-color: rgb(204, 204, 204); border-right-style: solid; border-right-width: 1px; border-top-color: rgb(204, 204, 204); border-top-style: solid; border-top-width: 1px; color: black; cursor: pointer; display: none; font-family: \\'Lucida Grande\\'; font-size: 10px; font-style: normal; font-variant: normal; font-weight: normal; height: auto; letter-spacing: normal; line-height: normal; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 4px; padding-left: 8px; padding-right: 8px; padding-top: 4px; text-align: center; text-indent: 0px; text-shadow: none; text-transform: none; vertical-align: top; white-space: pre; width: 80px; word-spacing: 0px;}</style>'+$('timeline').innerHTML;
+	var e=document.getElementById('follow_control');
+	if (e!=null) {
+		var u=e.parentNode.parentNode.className;
+		u=u.substr(u.lastIndexOf(' ')+1);
+		var l=document.createElement('div');
+		l.innerHTML='<a class=\\\"__yasst-followsingle\\\" href=\\\"twitter:/follow/'+u+'\\\">Follow</a>';
+		e.parentNode.parentNode.insertBefore(l,e.parentNode);
+	} else {		
+		e=i.getElementsByClassName('follow-actions');
+		for(b=0;b<e.length;b++) {
+			var u=e[b].parentNode.parentNode.className;
+			u=u.substr(u.lastIndexOf(' ')+6);
+			var l=document.createElement('div');
+			var c=e[b].childNodes;
+			for(var x=0;x<c.length;x++) {
+				if (c[x].nodeName=='FORM') {
+					var d=c[x].action.substr(c[x].action.lastIndexOf('/')+1);
+					var f=c[x].firstChild.childNodes;
+					l.innerHTML='<a class=\\\"__yasst-follow\\\" href=\\\"twitter:/follow/'+u+'\\\">Follow</a>';
+					for(var y=0;y<f.length;y++) {
+						if(f[y].nodeName=='INPUT'&&f[y].type=='submit') {
+							f[y].parentNode.insertBefore(l,f[y]);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+__yasst();
+
+	i.innerHTML='<style>.follow-actions input{display:none;} a.__yasst-follow{background-attachment: scroll; background-color: rgb(230, 230, 230); background-image: none; background-position: 0% 0%; background-repeat: repeat; border-bottom-color: rgb(204, 204, 204); border-bottom-style: solid; border-bottom-width: 1px; border-collapse: separate; border-left-color: rgb(204, 204, 204); border-left-style: solid; border-left-width: 1px; border-right-color: rgb(204, 204, 204); border-right-style: solid; border-right-width: 1px; border-spacing: 0px 0px; border-top-color: rgb(204, 204, 204); border-top-style: solid; border-top-width: 1px; bottom: auto; caption-side: top; clear: none; clip: auto; color: rgb(0, 0, 0); content: none; counter-increment: none; counter-reset: none; cursor: pointer; direction: ltr; display: inline; empty-cells: show; float: none; font-family: MS Shell Dlg; font-size: 10px; font-size-adjust: none; font-style: normal; font-variant: normal; font-weight: 400; height: 15px; left: auto; letter-spacing: normal; line-height: 13px; list-style-image: none; list-style-position: outside; list-style-type: none; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; marker-offset: auto; max-height: none; max-width: none; min-height: 0px; min-width: 0px; ime-mode: auto; opacity: 1; outline-color: rgb(0, 0, 0); outline-style: none; outline-width: 0px; outline-offset: 0px; overflow: visible; overflow-x: visible; overflow-y: visible; padding-bottom: 4px; padding-left: 8px; padding-right: 8px; padding-top: 4px; page-break-after: auto; page-break-before: auto; position: static; right: auto; table-layout: auto; text-align: center; text-decoration: none; text-indent: 0px; text-transform: none; top: auto; unicode-bidi: normal; vertical-align: top; visibility: visible !important; white-space: pre; width: 62px; word-spacing: normal; z-index: auto; clip-path: none; clip-rule: nonzero; color-interpolation: srgb; color-interpolation-filters: linearrgb; dominant-baseline: auto; fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: nonzero; filter: none; flood-color: rgb(0, 0, 0); flood-opacity: 1; lighting-color: rgb(255, 255, 255); mask: none; marker-end: none; marker-mid: none; marker-start: none; pointer-events: visiblepainted; shape-rendering: auto; stop-color: rgb(0, 0, 0); stop-opacity: 1; stroke: none; stroke-dasharray: none; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; text-anchor: start; text-rendering: optimizelegibility;}</style>'+$('timeline').innerHTML;
+
+						//f[y].parentNode.insertAfter(l,f[y]);

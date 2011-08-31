@@ -1,0 +1,12 @@
+#stack QPushButton {
+	icon-size: 16px 16px;
+}
+
+QLabel#info {
+	font-size: 8pt;
+}
+
+QLabel#date {
+	font-size: 8pt;
+}
+
